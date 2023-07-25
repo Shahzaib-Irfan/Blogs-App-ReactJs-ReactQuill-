@@ -7,9 +7,8 @@ const BlogList = ({ blogs }) => {
       <center>
         <h2>Blogs</h2>
       </center>
-      blogs ?{" "}
-      <>
-        {blogs.map((blog, index) => {
+      {blogs ? (
+        blogs.map((blog, index) => {
           return (
             <div key={index}>
               <Link style={{ textTransform: "none" }} to={`/blog/${index}`}>
@@ -17,9 +16,10 @@ const BlogList = ({ blogs }) => {
               </Link>
             </div>
           );
-        })}
-      </>{" "}
-      : <center>No Blogs Found</center>
+        })
+      ) : (
+        <center>No Blogs Found</center>
+      )}
     </div>
   );
 };
